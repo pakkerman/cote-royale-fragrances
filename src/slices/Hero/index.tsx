@@ -19,7 +19,7 @@ const Hero: FC<HeroProps> = ({ slice }) => {
       data-slice-variation={slice.variation}
       className="relative min-h-screen overflow-hidden bg-neutral-950"
     >
-      <div className="absolute inset-0 scale-125 ">
+      <div className="absolute inset-0 scale-125">
         <PrismicNextImage
           field={slice.primary.image}
           alt=""
@@ -29,7 +29,7 @@ const Hero: FC<HeroProps> = ({ slice }) => {
         />
       </div>
       <div className="relative flex h-screen flex-col justify-center">
-        <div className="max-w-xl text-6xl leading-none text-neutral-50 md:text-7xl lg:text-8xl">
+        <div className="max-w-xl font-display text-6xl leading-none text-neutral-50 md:text-7xl lg:text-8xl">
           <PrismicRichText field={slice.primary.heading} />
         </div>
 
