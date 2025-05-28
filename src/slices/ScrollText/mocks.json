@@ -3,21 +3,21 @@
 		"__TYPE__": "SharedSliceContent",
 		"variation": "default",
 		"primary": {
-			"heading": {
+			"eyebrow": {
+				"__TYPE__": "FieldContent",
+				"value": "species",
+				"type": "Text"
+			},
+			"text": {
 				"__TYPE__": "StructuredTextContent",
 				"value": [
 					{
 						"type": "paragraph",
 						"content": {
-							"text": "Fugiat exercitation commodo aliqua sint adipisicing laboris aliquip duis adipisicing."
+							"text": "Elit consequat nulla nisi magna nisi anim consectetur est ex do ullamco sunt excepteur sit."
 						}
 					}
 				]
-			},
-			"eyebrow": {
-				"__TYPE__": "FieldContent",
-				"value": "species",
-				"type": "Text"
 			}
 		},
 		"items": []

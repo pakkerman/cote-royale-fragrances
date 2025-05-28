@@ -19,7 +19,7 @@
             "placeholder": ""
           }
         },
-        "heading": {
+        "text": {
           "type": "StructuredText",
           "config": {
             "label": "Text",

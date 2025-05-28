@@ -170,10 +170,10 @@ export interface ScrollTextSliceDefaultPrimary {
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: scroll_text.default.primary.heading
+   * - **API ID Path**: scroll_text.default.primary.text
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
-  heading: prismic.RichTextField;
+  text: prismic.RichTextField;
 }
 
 /**
