@@ -22,15 +22,15 @@ interface FragranceDocumentData {
   title: prismic.TitleField;
 
   /**
-   * Bottom Image field in *Fragrance*
+   * Bottle Image field in *Fragrance*
    *
    * - **Field Type**: Image
    * - **Placeholder**: *None*
-   * - **API ID Path**: fragrance.bottom_image
+   * - **API ID Path**: fragrance.bottle_image
    * - **Tab**: Main
    * - **Documentation**: https://prismic.io/docs/field#image
    */
-  bottom_image: prismic.ImageField<never>;
+  bottle_image: prismic.ImageField<never>;
 
   /**
    * Feature Image field in *Fragrance*

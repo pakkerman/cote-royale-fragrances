@@ -15,10 +15,10 @@
           "single": "heading1"
         }
       },
-      "bottom_image": {
+      "bottle_image": {
         "type": "Image",
         "config": {
-          "label": "Bottom Image",
+          "label": "Bottle Image",
           "constraint": {},
           "thumbnails": []
         }
