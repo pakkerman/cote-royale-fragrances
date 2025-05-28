@@ -34,7 +34,7 @@ export default function RootLayout({
     >
       <body className="bg-neutral-900 text-white">
         <NavBar />
-        <main>{children}</main>
+        <main className="pt-14 md:pt-16">{children}</main>
         <Footer />
       </body>
     </html>
