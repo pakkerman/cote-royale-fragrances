@@ -35,6 +35,7 @@ const ProductFeature: FC<ProductFeatureProps> = async ({ slice }) => {
       <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-3 lg:grid-rows-[auto,auto]">
         <FadeIn
           vars={{ duration: 1 }}
+          start="top 70%"
           className="translate-y-16 opacity-0 lg:col-span-2 lg:row-span-2"
         >
           <PrismicNextImage
