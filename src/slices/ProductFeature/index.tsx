@@ -18,6 +18,7 @@ export type ProductFeatureProps =
 
 const ProductFeature: FC<ProductFeatureProps> = async ({ slice }) => {
   const client = createClient();
+
   const fragrance = isFilled.contentRelationship(slice.primary.fragrance)
     ? await client.getByID<Content.FragranceDocument>(
         slice.primary.fragrance.id,

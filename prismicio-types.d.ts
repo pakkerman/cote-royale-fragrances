@@ -87,7 +87,7 @@ interface FragranceDocumentData {
    * - **Tab**: Main
    * - **Documentation**: https://prismic.io/docs/field#select
    */
-  mood: prismic.SelectField<"bold" | "gounded" | "refreshing", "filled">;
+  mood: prismic.SelectField<"bold" | "grounded" | "refreshing", "filled">;
 
   /**
    * Slice Zone field in *Fragrance*
@@ -99,6 +99,28 @@ interface FragranceDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#slices
    */
   slices: prismic.SliceZone<FragranceDocumentDataSlicesSlice> /**
+   * Meta Title field in *Fragrance*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: fragrance.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */;
+  meta_title: prismic.KeyTextField;
+
+  /**
+   * Meta Description field in *Fragrance*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A brief summary of the page
+   * - **API ID Path**: fragrance.meta_description
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  meta_description: prismic.KeyTextField;
+
+  /**
    * Meta Image field in *Fragrance*
    *
    * - **Field Type**: Image
@@ -106,7 +128,7 @@ interface FragranceDocumentData {
    * - **API ID Path**: fragrance.meta_image
    * - **Tab**: SEO & Metadata
    * - **Documentation**: https://prismic.io/docs/field#image
-   */;
+   */
   meta_image: prismic.ImageField<never>;
 }
 
@@ -114,13 +136,13 @@ interface FragranceDocumentData {
  * Fragrance document from Prismic
  *
  * - **API ID**: `fragrance`
- * - **Repeatable**: `false`
+ * - **Repeatable**: `true`
  * - **Documentation**: https://prismic.io/docs/custom-types
  *
  * @typeParam Lang - Language API ID of the document.
  */
 export type FragranceDocument<Lang extends string = string> =
-  prismic.PrismicDocumentWithoutUID<
+  prismic.PrismicDocumentWithUID<
     Simplify<FragranceDocumentData>,
     "fragrance",
     Lang
@@ -499,6 +521,33 @@ export type ScrollTextSlice = prismic.SharedSlice<
   ScrollTextSliceVariation
 >;
 
+/**
+ * Default variation for Title Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type TitleSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Record<string, never>,
+  never
+>;
+
+/**
+ * Slice variation for *Title*
+ */
+type TitleSliceVariation = TitleSliceDefault;
+
+/**
+ * Title Shared Slice
+ *
+ * - **API ID**: `title`
+ * - **Description**: Title
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type TitleSlice = prismic.SharedSlice<"title", TitleSliceVariation>;
+
 declare module "@prismicio/client" {
   interface CreateClient {
     (
@@ -544,6 +593,9 @@ declare module "@prismicio/client" {
       ScrollTextSliceDefaultPrimary,
       ScrollTextSliceVariation,
       ScrollTextSliceDefault,
+      TitleSlice,
+      TitleSliceVariation,
+      TitleSliceDefault,
     };
   }
 }
