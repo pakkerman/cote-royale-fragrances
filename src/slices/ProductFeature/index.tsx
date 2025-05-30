@@ -18,7 +18,6 @@ export type ProductFeatureProps =
 
 const ProductFeature: FC<ProductFeatureProps> = async ({ slice }) => {
   const client = createClient();
-
   const fragrance = isFilled.contentRelationship(slice.primary.fragrance)
     ? await client.getByID<Content.FragranceDocument>(
         slice.primary.fragrance.id,
@@ -66,7 +65,7 @@ const ProductFeature: FC<ProductFeatureProps> = async ({ slice }) => {
               <h3 className="font-display text-4xl">
                 <PrismicText
                   field={fragrance?.data.title}
-                  fallback="Fragrance "
+                  fallback="Fragrance"
                 />
               </h3>
               <p className="mt-2 text-gray-400">Eau de Perfum</p>
