@@ -17,18 +17,27 @@ export default async function FragranceDisplay({ id }: FragranceDisplayProps) {
   const fragrance = await client.getByID<Content.FragranceDocument>(id);
 
   return (
-    <FadeIn className="relative z-10 grid min-h-[85vh] w-full translate-y-20 items-center justify-items-start border-white/10 p-4 text-left md:p-14 lg:p-20">
+    <FadeIn
+      vars={{
+        duration: 2.5,
+        start: "top 50%",
+      }}
+      className="relative z-10 grid min-h-[85vh] w-full translate-y-20 items-center justify-items-start border-white/10 p-4 text-left md:p-14 lg:p-20"
+    >
       <div className="absolute inset-0 z-0">
         <PrismicNextImage
           field={fragrance.data.feature_image}
-          className="object-cover opacity-40 md:opacity-100 "
+          className=" object-[70%] object-cover opacity-40 md:opacity-100"
           fill
           width={1150}
           quality={90}
           alt=""
         />
       </div>
-      <FadeIn className="relative z-10 grid translate-y-8 ">
+      <FadeIn
+        vars={{ duration: 3, delay: 0.8, start: "top 50%" }}
+        className="relative z-10 grid translate-y-8"
+      >
         <h3 className="mb-3 font-display text-5xl md:text-6xl lg:text-7xl">
           <PrismicText field={fragrance.data.title} />
         </h3>
@@ -50,8 +59,9 @@ export default async function FragranceDisplay({ id }: FragranceDisplayProps) {
             Discover
           </ButtonLink>
 
-          <ButtonLink href="#" variant="primary">
-            <HiPlus /> <span className="">Add to Bag</span>
+          <ButtonLink href="#" variant="primary" className="gap-2">
+            <HiPlus />
+            <span className="">Add to Bag</span>
           </ButtonLink>
         </div>
       </FadeIn>
