@@ -3,7 +3,7 @@ import { PrismicNextImage } from "@prismicio/next";
 import { PrismicRichText, PrismicText } from "@prismicio/react";
 
 import { createClient } from "@/prismicio";
-import { FadeIn } from "@/components/FadeIn";
+import FadeIn from "@/components/FadeIn";
 import ButtonLink from "@/components/ButtonLink";
 import { HiPlus } from "react-icons/hi2";
 import { FragranceAttribute } from "@/components/FragranceAttribute";

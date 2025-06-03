@@ -3,7 +3,7 @@ import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
 import { Content, isFilled } from "@prismicio/client";
 
 import { Bounded } from "@/components/Bounded";
-import { RevealText } from "@/components/RevealText";
+import RevealText from "@/components/RevealText";
 import FragranceDisplay from "./FragranceDisplay";
 
 export type FragranceListProps =

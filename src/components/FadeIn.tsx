@@ -15,12 +15,12 @@ type FadeInProps = {
   className?: string;
 };
 
-export const FadeIn = ({
+export default function FadeIn({
   children,
   vars = {},
   start = "top 80%",
   className,
-}: FadeInProps) => {
+}: FadeInProps) {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useGSAP(
@@ -59,4 +59,4 @@ export const FadeIn = ({
       {children}
     </div>
   );
-};
+}

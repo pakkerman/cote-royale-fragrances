@@ -10,7 +10,7 @@ import { PrismicNextImage } from "@prismicio/next";
 import { createClient } from "@/prismicio";
 import { formatPrice } from "@/utils/formatters";
 import { Bounded } from "@/components/Bounded";
-import { FadeIn } from "@/components/FadeIn";
+import FadeIn from "@/components/FadeIn";
 import ButtonLink from "@/components/ButtonLink";
 
 export type ProductFeatureProps =

@@ -18,7 +18,7 @@ type RevealTextProps = {
   align?: "center" | "start" | "end";
 };
 
-export const RevealText = ({
+export default function RevealText({
   field,
   id,
   className,
@@ -26,7 +26,7 @@ export const RevealText = ({
   align = "start",
   as: Component = "div",
   duration = 0.8,
-}: RevealTextProps) => {
+}: RevealTextProps) {
   const componentRef = useRef<HTMLDivElement>(null);
 
   const words = asText(field).split(" ");
@@ -80,4 +80,4 @@ export const RevealText = ({
       ))}
     </Component>
   );
-};
+}
