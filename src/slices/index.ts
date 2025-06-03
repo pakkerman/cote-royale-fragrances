@@ -9,4 +9,5 @@ export const components = {
   product_feature: dynamic(() => import("./ProductFeature")),
   scroll_text: dynamic(() => import("./ScrollText")),
   title: dynamic(() => import("./Title")),
+  video: dynamic(() => import("./Video")),
 };

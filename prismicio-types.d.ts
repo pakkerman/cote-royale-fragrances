@@ -149,6 +149,7 @@ export type FragranceDocument<Lang extends string = string> =
   >;
 
 type HomepageDocumentDataSlicesSlice =
+  | VideoSlice
   | CallToActionSlice
   | FragranceListSlice
   | ProductFeatureSlice
@@ -632,6 +633,48 @@ type TitleSliceVariation = TitleSliceDefault;
  */
 export type TitleSlice = prismic.SharedSlice<"title", TitleSliceVariation>;
 
+/**
+ * Primary content in *Video → Default → Primary*
+ */
+export interface VideoSliceDefaultPrimary {
+  /**
+   * Youtube Video ID field in *Video → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: eTEsWseiDdg
+   * - **API ID Path**: video.default.primary.youtube_video_id
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  youtube_video_id: prismic.KeyTextField;
+}
+
+/**
+ * Default variation for Video Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type VideoSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<VideoSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Video*
+ */
+type VideoSliceVariation = VideoSliceDefault;
+
+/**
+ * Video Shared Slice
+ *
+ * - **API ID**: `video`
+ * - **Description**: Video
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type VideoSlice = prismic.SharedSlice<"video", VideoSliceVariation>;
+
 declare module "@prismicio/client" {
   interface CreateClient {
     (
@@ -684,6 +727,10 @@ declare module "@prismicio/client" {
       TitleSlice,
       TitleSliceVariation,
       TitleSliceDefault,
+      VideoSlice,
+      VideoSliceDefaultPrimary,
+      VideoSliceVariation,
+      VideoSliceDefault,
     };
   }
 }
