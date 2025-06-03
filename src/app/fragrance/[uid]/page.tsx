@@ -9,6 +9,7 @@ import { PrismicRichText, PrismicText } from "@prismicio/react";
 import { FragranceAttribute } from "@/components/FragranceAttribute";
 import { formatPrice } from "@/utils/formatters";
 import { HiStar } from "react-icons/hi2";
+import OtherFragrances from "@/components/OtherFragrances";
 
 type Params = { uid: string };
 
@@ -65,9 +66,11 @@ export default async function ({ params }: { params: Promise<Params> }) {
               ))}
               <HiStar className="size-5 text-white/50" />
             </div>
+            <span className="tracking-widest">4.4/5</span>
           </div>
         </div>
       </div>
+      <OtherFragrances currentFragranceUid={uid} />
     </Bounded>
   );
 }
