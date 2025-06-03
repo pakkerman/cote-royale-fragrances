@@ -2,7 +2,7 @@ import { ReactNode } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
-export const Footer = () => {
+export default function Footer() {
   return (
     <footer aria-labelledby="footer-heading" className="bg-black py-16">
       <h2 id="footer-heading" className="sr-only">
@@ -60,7 +60,7 @@ export const Footer = () => {
       </div>
     </footer>
   );
-};
+}
 
 type NavGroupProps = {
   title: string;
