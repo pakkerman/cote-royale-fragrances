@@ -12,7 +12,7 @@ export default function Footer() {
         <div className="grid gap-10 md:grid-cols-3">
           <NavGroup title="Shop">
             <NavLink href="/fragrance/terra">Terra</NavLink>
-            <NavLink href="/fragrance/igni">Igni</NavLink>
+            <NavLink href="/fragrance/ignis">Igni</NavLink>
             <NavLink href="/fragrance/aqua">Aqua</NavLink>
           </NavGroup>
 
