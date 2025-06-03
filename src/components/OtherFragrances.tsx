@@ -33,6 +33,7 @@ export default async function OtherFragrances({
                   width={600}
                   height={600}
                   className="h-auto w-full"
+                  alt=""
                 />
               </div>
 
