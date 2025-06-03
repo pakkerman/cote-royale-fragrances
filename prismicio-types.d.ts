@@ -99,28 +99,6 @@ interface FragranceDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#slices
    */
   slices: prismic.SliceZone<FragranceDocumentDataSlicesSlice> /**
-   * Meta Title field in *Fragrance*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: A title of the page used for social media and search engines
-   * - **API ID Path**: fragrance.meta_title
-   * - **Tab**: SEO & Metadata
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */;
-  meta_title: prismic.KeyTextField;
-
-  /**
-   * Meta Description field in *Fragrance*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: A brief summary of the page
-   * - **API ID Path**: fragrance.meta_description
-   * - **Tab**: SEO & Metadata
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  meta_description: prismic.KeyTextField;
-
-  /**
    * Meta Image field in *Fragrance*
    *
    * - **Field Type**: Image
@@ -128,7 +106,7 @@ interface FragranceDocumentData {
    * - **API ID Path**: fragrance.meta_image
    * - **Tab**: SEO & Metadata
    * - **Documentation**: https://prismic.io/docs/field#image
-   */
+   */;
   meta_image: prismic.ImageField<never>;
 }
 
