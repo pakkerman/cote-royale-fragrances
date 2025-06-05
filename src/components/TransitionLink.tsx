@@ -8,7 +8,7 @@ export type TransitionLinkProps = {
   tabIndex?: number;
 } & (
   | { field: LinkField | null; document?: never; href?: never }
-  | { field?: never; document: PrismicDocument; href?: never }
+  | { field?: never; document: PrismicDocument | null; href?: never }
   | { field?: never; document?: never; href: string }
 );
 
