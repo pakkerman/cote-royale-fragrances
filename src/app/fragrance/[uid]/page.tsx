@@ -13,7 +13,7 @@ import OtherFragrances from "@/components/OtherFragrances";
 
 type Params = { uid: string };
 
-export default async function ({ params }: { params: Promise<Params> }) {
+export default async function Page({ params }: { params: Promise<Params> }) {
   const { uid } = await params;
   const client = createClient();
   const page = await client.getByUID("fragrance", uid).catch(() => notFound());

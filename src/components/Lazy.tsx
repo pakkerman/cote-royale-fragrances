@@ -6,7 +6,7 @@ type LazyProps = ComponentProps<"div"> & {
   rootMargin?: string;
 };
 
-export default function ({ rootMargin, children, ...rest }: LazyProps) {
+export default function Lazy({ rootMargin, children, ...rest }: LazyProps) {
   const [isInView, setIsInView] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 
