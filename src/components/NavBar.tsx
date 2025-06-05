@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import Link from "next/link";
 import {
   HiBars3,
   HiMagnifyingGlass,
@@ -12,7 +11,8 @@ import {
 } from "react-icons/hi2";
 import clsx from "clsx";
 import { Content } from "@prismicio/client";
-import { PrismicNextLink } from "@prismicio/next";
+
+import TransitionLink from "@/components/TransitionLink";
 
 type NavIconsProps = {
   className?: string;
@@ -22,30 +22,30 @@ type NavIconsProps = {
 function NavIcons({ className = "", tabIndex: tabIndex }: NavIconsProps) {
   return (
     <div className={clsx("flex items-center gap-8", className)}>
-      <Link
+      <TransitionLink
         href="#"
         className="text-white"
         aria-label="search"
         tabIndex={tabIndex}
       >
         <HiMagnifyingGlass size={24} />
-      </Link>
-      <Link
+      </TransitionLink>
+      <TransitionLink
         href="#"
         className="text-white"
         aria-label="search"
         tabIndex={tabIndex}
       >
         <HiUser size={24} />
-      </Link>
-      <Link
+      </TransitionLink>
+      <TransitionLink
         href="#"
         className="text-white"
         aria-label="search"
         tabIndex={tabIndex}
       >
         <HiShoppingBag size={24} />
-      </Link>
+      </TransitionLink>
     </div>
   );
 }
@@ -71,7 +71,7 @@ export default function NavBar({ settings }: NavBarProps) {
             <HiBars3 size={24} />
           </button>
           <div className="absolute left-1/2 -translate-x-1/2 transform">
-            <Link href="/">
+            <TransitionLink href="/">
               <Image
                 src="/logo.svg"
                 alt="cote royale paris"
@@ -79,7 +79,7 @@ export default function NavBar({ settings }: NavBarProps) {
                 height={30}
                 className="w-32 cursor-pointer md:w-44"
               />
-            </Link>
+            </TransitionLink>
           </div>
           <div className="flex">
             <NavIcons className="hidden md:flex" />
@@ -118,7 +118,7 @@ export default function NavBar({ settings }: NavBarProps) {
 
         <nav aria-label="main navigation" className="space-y-4 flex flex-col">
           {settings.data.navigation_link.map((link) => (
-            <PrismicNextLink
+            <TransitionLink
               key={link.key}
               field={link}
               onClick={() => setIsDrawerOpen(false)}
