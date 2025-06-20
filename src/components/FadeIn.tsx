@@ -1,6 +1,12 @@
 "use client";
 
-import { useRef } from "react";
+import {
+  Children,
+  cloneElement,
+  isValidElement,
+  useRef,
+  useState,
+} from "react";
 import clsx from "clsx";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
@@ -22,6 +28,7 @@ export default function FadeIn({
   className,
 }: FadeInProps) {
   const containerRef = useRef<HTMLDivElement>(null);
+  const [disabled, setDisabled] = useState(true);
 
   useGSAP(
     () => {
@@ -38,6 +45,7 @@ export default function FadeIn({
             trigger: containerRef.current,
             start,
           },
+          onComplete: () => setDisabled(false),
         });
       });
 
@@ -48,15 +56,31 @@ export default function FadeIn({
           duration: 0.5,
           ease: "none",
           stagger: 0,
+          onComplete: () => setDisabled(false),
         });
       });
     },
     { scope: containerRef },
   );
 
+  const childrenWithDiabledProp = Children.map(children, (child) => {
+    if (isValidElement(child)) {
+      const supportsDisabled =
+        typeof child.type === "string" &&
+        ["button", "input", "textarea", "select"].includes(child.type);
+
+      if (supportsDisabled) {
+        return cloneElement(child, {
+          disabled: disabled,
+        } as React.HTMLAttributes<HTMLElement>);
+      }
+    }
+    return child;
+  });
+
   return (
     <div ref={containerRef} className={clsx("opacity-0", className)}>
-      {children}
+      {childrenWithDiabledProp}
     </div>
   );
 }

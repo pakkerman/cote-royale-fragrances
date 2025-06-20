@@ -135,9 +135,9 @@ export function Question({
   };
 
   return (
-    <div className="mx-auto max-w-4xl py-10 text-center">
+    <div className="mx-auto max-w-4xl py-10 text-center relative">
       {/* {step counter} */}
-      <div className="mx-auto mb-10 flex w-full max-w-md items-center">
+      <div className="mx-auto mb-10 flex w-full max-w-md items-center select-none">
         {Array.from({ length: totalQuestions }).map((_, idx) => (
           <Fragment key={idx}>
             <div
@@ -193,7 +193,7 @@ export function Question({
           </fieldset>
         </div>
 
-        <div className="mx-auto flex max-w-md items-center justify-between select-none">
+        <div className="mx-auto flex max-w-md items-center justify-between">
           <button
             onClick={handleBack}
             className="cursor-pointer border border-neutral-700 px-4 py-2 uppercase"

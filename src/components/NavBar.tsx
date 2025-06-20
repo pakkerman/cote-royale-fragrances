@@ -77,7 +77,7 @@ export default function NavBar({ settings }: NavBarProps) {
                 alt="cote royale paris"
                 width={100}
                 height={30}
-                className="w-32 cursor-pointer md:w-44"
+                className="w-32 cursor-pointer md:w-44 select-none"
               />
             </TransitionLink>
           </div>

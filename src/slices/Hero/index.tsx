@@ -26,7 +26,7 @@ const Hero: FC<HeroProps> = ({ slice }) => {
           alt=""
           priority
           fill
-          className="object-cover motion-reduce:opacity-50"
+          className="object-cover motion-reduce:opacity-50 select-none"
         />
       </FadeIn>
       <div className="relative flex h-screen flex-col justify-center">

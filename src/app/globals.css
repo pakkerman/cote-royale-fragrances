@@ -5,6 +5,10 @@
   --font-sans: var(--font-raleway);
 }
 
+html {
+  @apply selection:bg-slate-800/40;
+}
+
 /* Background Effects */
 .glow-background {
   background-color: hsla(0, 0%, 0%, 0);

@@ -13,7 +13,7 @@ type StartScreenProps = {
 
 export default function StartScreen({ quizData, onStart }: StartScreenProps) {
   return (
-    <div className="mx-auto max-w-4xl py-40 text-center ">
+    <div className="relative mx-auto max-w-4xl py-40 text-center">
       <FadeIn vars={{ delay: 0, duration: 1.2 }} className="translate-y-8">
         <p className="mb-4 tracking-widest uppercase">
           {quizData.data.eyebrow}
@@ -25,7 +25,7 @@ export default function StartScreen({ quizData, onStart }: StartScreenProps) {
         id="quiz-title"
         field={quizData.data.heading}
         duration={2}
-        className="font-display mb-8 text-5xl text-balance sm:text-6xl md:text-7xl"
+        className="mb-8 font-display text-5xl text-balance sm:text-6xl md:text-7xl"
       />
 
       <FadeIn
@@ -37,7 +37,7 @@ export default function StartScreen({ quizData, onStart }: StartScreenProps) {
 
       <FadeIn vars={{ delay: 2, duration: 2 }} className="translate-y-8">
         <button
-          className="inline-block cursor-pointer bg-white px-12 py-4 font-extrabold tracking-whider text-black uppercase transition-colors hover:bg-gray-100"
+          className="tracking-whider inline-block cursor-pointer bg-white px-12 py-4 font-extrabold text-black uppercase transition-all duration-500 hover:bg-gray-100 hover:brightness-125 disabled:cursor-default disabled:brightness-50 "
           onClick={onStart}
         >
           {quizData.data.start_button_text || "Start the quiz"}
