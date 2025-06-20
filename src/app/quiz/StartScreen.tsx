@@ -37,7 +37,7 @@ export default function StartScreen({ quizData, onStart }: StartScreenProps) {
 
       <FadeIn vars={{ delay: 2, duration: 2 }} className="translate-y-8">
         <button
-          className="tracking-whider inline-block cursor-pointer bg-white px-12 py-4 font-extrabold text-black uppercase transition-all duration-500 hover:bg-gray-100 hover:brightness-125 disabled:cursor-default disabled:brightness-50 "
+          className="inline-block cursor-pointer bg-white px-12 py-4 font-extrabold tracking-wider text-black uppercase transition-all duration-300 hover:bg-gray-100 hover:brightness-125 disabled:cursor-default disabled:brightness-50"
           onClick={onStart}
         >
           {quizData.data.start_button_text || "Start the quiz"}

@@ -13,7 +13,7 @@ export default async function Page() {
   const fragrances = await client.getAllByType("fragrance");
 
   return (
-    <Bounded className="grid min-h-screen plae-items-center bg-[url('/background.avif')] bg-cover bg-center text-gray-50">
+    <Bounded className="grid min-h-screen place-items-center bg-[url('/background.avif')] bg-cover bg-center text-gray-50">
       <Quiz quizData={quiz} fragrances={fragrances} />
     </Bounded>
   );

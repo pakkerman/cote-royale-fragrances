@@ -146,7 +146,7 @@ export default function Results({
                     <span className="ml-3 text-gray-400">(120 Reviews)</span>
                   </div>
                   <div className="">
-                    <h3 className="font-display mt-2 text-3xl">
+                    <h3 className="mt-2 font-display text-3xl">
                       <PrismicText field={fragrance.data.title} /> Eau De Parfum
                     </h3>
 

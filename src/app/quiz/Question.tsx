@@ -135,7 +135,7 @@ export function Question({
   };
 
   return (
-    <div className="mx-auto max-w-4xl py-10 text-center relative">
+    <div className="relative mx-auto max-w-4xl py-10 text-center">
       {/* {step counter} */}
       <div className="mx-auto mb-10 flex w-full max-w-md items-center select-none">
         {Array.from({ length: totalQuestions }).map((_, idx) => (
@@ -257,7 +257,7 @@ export function Answer({
           `answer-${value}`,
         )}
       >
-        <div className="sm:max-w-44 relative mx-auto mb-2 aspect-square w-full max-w-32 sm:mb-3 md:max-w-none">
+        <div className="relative mx-auto mb-2 aspect-square w-full max-w-32 sm:mb-3 sm:max-w-44 md:max-w-none">
           <PrismicImage
             field={imageField}
             width={200}
