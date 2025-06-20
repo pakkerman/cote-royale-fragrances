@@ -30,6 +30,7 @@ export function Question({
   const [selectedOption, setSelectedOption] = useState<FragranceType | null>(
     null,
   );
+  const [disabled, setDisabled] = useState(false);
 
   useGSAP(() => {
     setSelectedOption(null);
@@ -103,6 +104,8 @@ export function Question({
   };
 
   const handleSelectedAnswer = (answer: FragranceType) => {
+    setDisabled(true);
+
     gsap.set(".answer-option", {
       clearProps: "all",
       opacity: 1,
@@ -123,6 +126,7 @@ export function Question({
       scale: 1.05,
       duration: 0.25,
       ease: "back.out(1.2)",
+      onComplete: () => setDisabled(false),
     });
   };
 
@@ -178,6 +182,7 @@ export function Question({
                   onClick={() => {
                     handleSelectedAnswer(answer.value);
                   }}
+                  disabled={disabled}
                 />
               ))}
             </div>
@@ -214,6 +219,7 @@ type AnswerProps = {
   question: string;
   index: number;
   checked?: boolean;
+  disabled: boolean;
   onClick?: () => void;
 };
 
@@ -223,6 +229,7 @@ export function Answer({
   question,
   value,
   checked,
+  disabled,
   onClick,
 }: AnswerProps) {
   const optionId = `option-${value}-${index}`;
@@ -236,6 +243,7 @@ export function Answer({
         value={value}
         onClick={onClick}
         className="peer absolute h-0 w-0 opacity-0"
+        disabled={disabled}
       />
       <label
         htmlFor={optionId}
