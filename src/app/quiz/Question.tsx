@@ -121,13 +121,17 @@ export function Question({
       scale: 1,
       duration: 0.2,
       ease: "power1.out",
-    }).to(`.answer-${answer}`, {
-      opacity: 1,
-      scale: 1.05,
-      duration: 0.25,
-      ease: "back.out(1.2)",
-      onComplete: () => setDisabled(false),
-    });
+    }).to(
+      `.answer-${answer}`,
+      {
+        opacity: 1,
+        scale: 1.05,
+        duration: 0.25,
+        ease: "back.out(1.2)",
+        onComplete: () => setDisabled(false),
+      },
+      "-=0.2",
+    );
   };
 
   return (
@@ -189,7 +193,7 @@ export function Question({
           </fieldset>
         </div>
 
-        <div className="mx-auto flex max-w-md items-center justify-between">
+        <div className="mx-auto flex max-w-md items-center justify-between select-none">
           <button
             onClick={handleBack}
             className="cursor-pointer border border-neutral-700 px-4 py-2 uppercase"
@@ -235,7 +239,7 @@ export function Answer({
   const optionId = `option-${value}-${index}`;
 
   return (
-    <div className="relative">
+    <div className="relative select-none">
       <input
         type="radio"
         id={optionId}

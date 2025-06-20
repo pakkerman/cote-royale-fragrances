@@ -82,3 +82,7 @@
     animation: 0.001s;
   }
 }
+
+button {
+  @apply select-none;
+}
